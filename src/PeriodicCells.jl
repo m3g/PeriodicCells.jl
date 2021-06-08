@@ -1,6 +1,5 @@
 module PeriodicCells
 
-using Parameters
 using StaticArrays
 using DocStringExtensions
 
@@ -13,7 +12,7 @@ $(TYPEDEF)
 Structure that contains the cell data. 
 
 """
-@with_kw struct Cell{N,T}
+struct Cell{N,T}
   sides::SVector{N,T}
   angles::SVector{N,T}
   origin::SVector{N,T}
@@ -36,7 +35,7 @@ function wrap!(x::AbstractVector, cell::Cell, center::AbstractVector)
   return nothing
 end
 
-@inline function wrapone(x::AbstractVector, cell:Cell, center::AbstractVector)
+@inline function wrapone(x::AbstractVector, cell::Cell, center::AbstractVector)
   s = @. (x-center)%sides
   s = @. wrapx(s,sides) + center
   return s
