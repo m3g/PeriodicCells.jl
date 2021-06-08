@@ -1,2 +1,5 @@
-# PeriodicCells.jl
-Operations on periodic cells
+# PeriodicCells
+
+This will be a key dependency of Packmol and other packages
+
+
