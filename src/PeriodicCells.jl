@@ -12,8 +12,6 @@ $(TYPEDEF)
 
 Structure that contains the cell data. 
 
-```
-
 """
 @with_kw struct Cell{N,T}
   sides::SVector{N,T}
